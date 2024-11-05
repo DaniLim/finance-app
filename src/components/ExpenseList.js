@@ -1,13 +1,14 @@
 import React from 'react';
+import Expense from './Expense';
+import styles from './ExpenseList.module.css';
 
 function ExpenseList({ expenses }) {
   return (
-    <div>
-      <h2>Expenses</h2>
-      <ul>
+    <div className={styles.container}>
+      <ul className={styles.list}>
         {expenses.map((expense) => (
           <li key={expense.id}>
-            {expense.name} - ${expense.amount}
+            <Expense name={expense.name} amount={expense.amount} />
           </li>
         ))}
       </ul>
